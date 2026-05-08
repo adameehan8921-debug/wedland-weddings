@@ -1,0 +1,143 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information including role and preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "street": { "type": "string" },
+              "city": { "type": "string" },
+              "state": { "type": "string" },
+              "zip": { "type": "string" },
+              "country": { "type": "string" },
+              "isDefault": { "type": "boolean" }
+            }
+          }
+        }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "E-commerce product details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "category": { "type": "string", "enum": ["Sarees", "Kurtis", "Mens Wear", "Kids Wear", "Accessories"] },
+        "subCategory": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "colors": { "type": "array", "items": { "type": "string" } },
+        "sizes": { "type": "array", "items": { "type": "string" } },
+        "stock": { "type": "integer" },
+        "featured": { "type": "boolean" },
+        "newArrival": { "type": "boolean" },
+        "ratings": { "type": "number" },
+        "reviewCount": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "price", "category", "images"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "productId": { "type": "string" },
+              "name": { "type": "string" },
+              "quantity": { "type": "integer" },
+              "price": { "type": "number" },
+              "selectedSize": { "type": "string" },
+              "selectedColor": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"] },
+        "shippingAddress": { "type": "object" },
+        "paymentMethod": { "type": "string" },
+        "paymentStatus": { "type": "string" },
+        "trackingNumber": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "items", "totalAmount", "status"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Product reviews",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "rating": { "type": "integer" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "userId", "rating"]
+    },
+    "Coupon": {
+      "title": "Coupon",
+      "description": "Discount coupons",
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "discountType": { "type": "string", "enum": ["percentage", "fixed"] },
+        "value": { "type": "number" },
+        "minPurchase": { "type": "number" },
+        "expiryDate": { "type": "string", "format": "date-time" },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["code", "discountType", "value"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Product catalog"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Product reviews"
+    },
+    "/coupons/{code}": {
+      "schema": "Coupon",
+      "description": "Discount coupons"
+    }
+  }
+}
