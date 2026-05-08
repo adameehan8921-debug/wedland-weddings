@@ -1,12 +1,20 @@
-# Wedland Weddings ðŸŒ¿âœ¨
+# Wedland Weddings 🌿✨
 
 **Royal Ethnic Curation & Legacy Textiles**
 
-Wedland Weddings is a premium e-commerce platform dedicated to the finest wedding ethnic wear. From masterfully woven sarees to bespoke kurtis, each piece in our archive is curated for those who value heritage, elegance, and distinct craftsmanship.
+Wedland Weddings is a premium e-commerce platform dedicated to the finest wedding ethnic wear.
 
 ---
 
-## ðŸ›ï¸ Features
+## 📥 Download the Code
+To download the complete source code as a ZIP file:
+1. Open the **Settings** menu in AI Studio (top-right gear icon).
+2. Go to **Export**.
+3. Select **Export to ZIP**.
+
+---
+
+## 🏛️ Features
 
 - **Immersive Narrative UI**: A dark-themed, cinematic shopping experience using modern aesthetic principles.
 - **Archive Explorer**: Effortlessly browse through legacy collections with smooth animations.
@@ -14,7 +22,7 @@ Wedland Weddings is a premium e-commerce platform dedicated to the finest weddin
 - **AI-Powered Curation**: Personalized recommendations for your style journey.
 - **Real-time Order Tracking**: Securely track your lineage from the weaver to your estate.
 
-## ðŸ› ï¸ Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: React 19, Vite, TypeScript
 - **Styling**: Tailwind CSS 4.0
@@ -24,7 +32,7 @@ Wedland Weddings is a premium e-commerce platform dedicated to the finest weddin
 
 ---
 
-## ðŸš€ Running Locally
+## 🚀 Running Locally
 
 Follow these steps to replicate the archive on your local machine:
 
@@ -52,7 +60,7 @@ The application will be accessible at `http://localhost:3000`.
 
 ---
 
-## ðŸ“¦ Deployment
+## 📦 Deployment
 
 ### GitHub + Render
 1. Push your code to a GitHub repository.
@@ -71,9 +79,9 @@ firebase deploy
 
 ---
 
-## ðŸ“œ Archives
+## 📜 Archives
 *Curated by Wedland Direct.*
 The journey of a thousand weaves begins with a single authentication.
 
 ---
-Â© 2026 Wedland Weddings. All rights reserved.
+© 2026 Wedland Weddings. All rights reserved.
